@@ -1,0 +1,85 @@
+.household {
+  display: flex;
+  flex-direction: column;
+}
+
+.household > * {
+  margin-top: 15px;
+}
+.formSteps {
+  padding: 10px;
+  max-width: 600px;
+}
+
+.householdInfo,
+.appliances {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+  padding-top: 0px;
+  max-width: 600px;
+}
+
+.householdInfo_form > Form > *,
+.appliances_form > Form > * {
+  margin-bottom: 5px;
+}
+
+.householdInfo_form > Form > .Household__grouped_input {
+  margin-bottom: -22px;
+}
+
+.form__divider > * {
+  color: gray;
+  font-weight: 700;
+}
+
+.householdInfo__form_actions {
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: 1px solid whitesmoke;
+  display: flex;
+  justify-content: right;
+}
+
+.householdInfo__form_actions_help {
+  color: #1677ff;
+  font-size: 13px;
+}
+
+.householdInfo__addMoreItems {
+  display: flex;
+  color: #1677ff;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+
+.householdInfo__addMoreItems > * {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.householdInfo__addMoreItems > *:hover {
+  border-bottom: 1px solid #1677ff;
+}
+
+.householdInfo__addMoreItems div:first-child:hover {
+  border: none;
+  cursor: auto;
+}
+
+.delete_icon {
+  color: #1677ff;
+}
+
+.delete_icon:hover {
+  cursor: pointer;
+  color: #1677ff;
+  opacity: 0.8;
+}
+
+.addAppliance__addBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}

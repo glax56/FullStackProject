@@ -1,0 +1,52 @@
+version: "3"
+services:
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./server/migrations/migration_queries.sql:/docker-entrypoint-initdb.d/init.sql
+
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3001"
+    depends_on:
+      - database
+    environment:
+      - PORT=${PORT}
+      - DB_HOST=database
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    restart: always
+    networks:
+      - app-network
+    volumes:
+      - ./server:/app
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3003:3000
+    volumes:
+      - ./client:/app
+    networks:
+      - app-network
+    depends_on:
+      - server
+
+networks:
+  app-network:

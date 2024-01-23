@@ -1,0 +1,25 @@
+.home__content {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+}
+
+.home__greeting {
+  font-size: 25px;
+  font-weight: 700;
+}
+.home__content > * > Button {
+  margin: 10px 0 0 0px;
+  font-weight: 700;
+}
+
+.home__content > * > Button:hover {
+  background-color: white !important;
+  border: 2px solid #1677ff;
+  color: black !important;
+}
+
+.home_greetingText {
+  margin-bottom: 15px;
+}

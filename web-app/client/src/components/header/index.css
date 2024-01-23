@@ -1,0 +1,10 @@
+.app__header {
+  background-color: #1677ff;
+  color: white;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
